@@ -20,6 +20,5 @@ public class Media {
     private String id;
     private String url;
     private MediaType type;
-
     private Article article;
 }

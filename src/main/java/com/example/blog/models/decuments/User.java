@@ -22,10 +22,7 @@ public class User {
     private String userName;
     private String password;
     private String email;
-    private String phoneNumber;
-    @CreatedDate
-    private LocalDate joinDate;
-    private List<Article> posts;
+    private List<Article> articles;
     private List<Comment> comments;
     private List<ArticleReact> articleReacts;
     private List<CommentReact> commentReacts;
