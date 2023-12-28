@@ -13,6 +13,8 @@ import java.util.List;
 public interface ArticleInt  {
     ArticleResponseDto add(ArticleDto Element) ;
     List<ArticleResponseDto> getAll(Pageable pageable);
+    List<ArticleResponseDto> searchArticles(String search);
+
 
 
 }

@@ -114,4 +114,20 @@ public class ArticleService implements ArticleInt {
         return null;
     }
 
+    @Override
+    @Transactional
+    public List<ArticleResponseDto> searchArticles(String search) {
+        List<Article> articles;
+        List<ArticleResponseDto> articleResponseDtos = new ArrayList<>();
+        if (search != null) {
+            articles = articleRepository.findByTagsContainingOrTextContainingOrTitleContaining(search, search, search);
+            for (Article article : articles) {
+                ArticleResponseDto articleResponseDto = modelMapper.map(article, ArticleResponseDto.class);
+                articleResponseDtos.add(articleResponseDto);
+            }
+        }
+
+        return articleResponseDtos;
+    }
+
 }

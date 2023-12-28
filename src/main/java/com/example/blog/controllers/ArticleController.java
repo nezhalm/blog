@@ -34,4 +34,10 @@ public class ArticleController {
         Pageable pageable = PageRequest.of(page, size);
         return articleService.getAll(pageable);
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<ArticleResponseDto>> searchArticles(@RequestParam String search) {
+        List<ArticleResponseDto> articleResponseDtos = articleService.searchArticles(search);
+        return ResponseEntity.ok(articleResponseDtos);
+    }
 }
